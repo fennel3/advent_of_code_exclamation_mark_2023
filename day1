@@ -11,13 +11,13 @@ def combine_first_last_digits(text):
     return None
 
 
-# Reading data from the file
+
 file_name = "list.py"
 
 with open(file_name, 'r') as file:
     data = file.readlines()
 
-# Combine first and last digits from each line in the list
+
 combined_numbers = []
 for item in data:
     combined = combine_first_last_digits(item)
@@ -28,3 +28,5 @@ print("Combined Numbers:", combined_numbers)
 
 total_sum = sum(combined_numbers)
 print("Sum of Combined Numbers:", total_sum)
+
+# Sum of Combined Numbers: 52974
