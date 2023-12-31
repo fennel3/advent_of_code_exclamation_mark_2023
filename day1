@@ -11,7 +11,7 @@ def combine_first_last_digits(text):
     return None
 
 
-
+# file_name is list of numbers provided by https://adventofcode.com/2023/day/1/input
 file_name = "list.py"
 
 with open(file_name, 'r') as file:
