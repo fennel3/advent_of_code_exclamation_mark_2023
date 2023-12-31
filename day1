@@ -1,0 +1,30 @@
+import re
+
+
+def combine_first_last_digits(text):
+    first_digit = re.search(r'\d', text)
+    last_digit = re.search(r'\d(?=\D*$)', text)
+
+    if first_digit and last_digit:
+        combined_number = int(first_digit.group() + last_digit.group())
+        return combined_number
+    return None
+
+
+# Reading data from the file
+file_name = "list.py"
+
+with open(file_name, 'r') as file:
+    data = file.readlines()
+
+# Combine first and last digits from each line in the list
+combined_numbers = []
+for item in data:
+    combined = combine_first_last_digits(item)
+    if combined is not None:
+        combined_numbers.append(combined)
+
+print("Combined Numbers:", combined_numbers)
+
+total_sum = sum(combined_numbers)
+print("Sum of Combined Numbers:", total_sum)
